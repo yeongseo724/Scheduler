@@ -24,7 +24,12 @@ int main(int argc, char *argv[]) {
 	int cnt;
 	
 	//1. FILE pointer open & error handling
-	//fill code here ----
+	FILE* fp = fopen("schedule.c", "w");
+	
+	if(ndPtr==NULL){
+		printf("memory allocation error!\n");
+		return -1;
+	}
 	
 	//initializing the list
 	printf("Reading the data files... \n");
@@ -44,6 +49,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	//fill code here ---- close the file pointer
+	fclose(fp);
 	
 	printf("Read done! %i schedules are read\n", list_len(list));
 	
@@ -52,10 +58,10 @@ int main(int argc, char *argv[]) {
 	while(exit_flag == 0) 
 	{
 		//3. menu printing
-		//fill code here ---- 
+		printf("1. print all the schedules\n2. search for schedules in the month\n3. search for schedules in the place\n4. search for specific type schedule\n5. exit\n\n");
 		
 		//4. get option from keyboard
-		//fill code here ----
+		printf("select an option : ");
 		
 		
 		switch(option)
